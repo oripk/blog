@@ -17,11 +17,12 @@
       </div>
 
       <h3 class="mb-4 pb-4 border-bottom">목록</h3>
-      <div class="row row-cols-1 row-cols-md-3">
+      <div class="row row-cols-1 row-cols-md-4">
       <% if(posts == null || posts.length == 0){ %>
         <div class="text-primary"> There is no data to show :( </div>
       <% } %>
-      <% posts.forEach((post) => { %>
+      <% posts.forEach((post, index) => { %>
+        <% if(index == 3) return false;%>
         <div class="col mb-4">
           <div class="card">
             <div class="card-body">
