@@ -11,7 +11,9 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect(process.env.MONGO_DB);
+//mongoose.connect(process.env.MONGO_DB;
+mongoose.connect("mongodb+srv://oripk:sldlflzc1%21@blog.nvhsd.gcp.mongodb.net/blog?retryWrites=true&w=majority");
+//mongoose.connect(config.DB,{ useMongoClient:true });
 var db = mongoose.connection;
 db.once('open', function(){
   console.log('DB connected');
@@ -29,7 +31,8 @@ app.use(methodOverride('_method'));
 
 // Routes
 app.use('/', require('./routes/home'));
-app.use('/posts', require('./routes/posts')); // 1
+app.use('/posts', require('./routes/posts'));
+
 // Port setting
 var port = 3000;
 app.listen(port, function(){
